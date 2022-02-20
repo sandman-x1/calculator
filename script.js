@@ -38,6 +38,7 @@ function showResult() {
     secondOperand = display.textContent
     let result = Math.floor(operate(currentOperator, firstOperand, secondOperand) * 1000) / 1000;
     miniDisplay.textContent = `${firstOperand} ${currentOperator} ${secondOperand} =`
+    if (currentOperator === '÷' && secondOperand === '0') result = 'Nope'
     display.textContent = result
     addingSecondOperand = true
     showingResult = true
