@@ -19,8 +19,14 @@
     background-color: white;
     border-radius: 6px;
     display: flex;
+    flex-direction: column;
     justify-content: end;
     align-items: flex-end;
+}
+
+#displaySec {
+    margin-right: 12px;
+    margin-bottom: 4px;
 }
 
 #displayMain {
@@ -73,4 +79,8 @@
 #equal {
     grid-column: 3 / 5;
     width: auto;
+}
+
+#equal:hover {
+    border: 3px solid #47c7fc;
 }
