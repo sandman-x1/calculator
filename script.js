@@ -6,6 +6,7 @@ const miniDisplay = document.getElementById('displaySec')
 const clearButton = document.getElementById('clear')
 const allClearButton = document.getElementById('allClear')
 const equalButton = document.getElementById('equal')
+const decimalButton = document.getElementById('decimal')
 
 let firstOperand = ''
 let secondOperand = ''
@@ -21,6 +22,7 @@ operators.forEach((button) =>
     button.addEventListener('click', () => evaluate(button.textContent))
 )
 
+decimalButton.addEventListener('click', () => limitDecimal())
 equalButton.addEventListener('click', () => showResult())
 allClearButton.addEventListener('click', () => resetAll())
 clearButton.addEventListener('click', () => clearMain())
@@ -50,6 +52,15 @@ function appendNumber(number) {
         addingSecondOperand = false
     }
     display.textContent += number
+}
+
+function limitDecimal() {
+    let checkDecimal = display.textContent.includes('.')
+    if (checkDecimal === false) {
+        display.textContent +='.'
+    } else if (checkDecimal === true) {
+        return
+    }
 }
 
 function resetScreen() {
